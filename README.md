@@ -22,12 +22,12 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
 ## Instalación
 
 1. Clona este repositorio:
-2. 
    git clone https://github.com/joanesMondra/reto2.git
    
 3. Navega al directorio del proyecto:
 
   cd reto2
+  
 3. Instala las dependencias necesarias:
   
   pip install -r requirements.txt
