@@ -48,5 +48,5 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
 ## Créditos
 Desarrollado por Joanes De Miguel, Esteban Ruiz y Hodei Azurmendi
 
-##Contacto
+## Contacto
 Para cualquier pregunta, comentario o sugerencia, por favor contacta al desarrollador principal a través de GitHub.
