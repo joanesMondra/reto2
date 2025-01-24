@@ -17,7 +17,7 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
 ## Requisitos
 
 - Python 3.12
-- Librerías especificadas en `requirements.txt` (asegúrate de instalarlo antes de iniciar).
+- Librerías especificadas en los códigos.
 
 ## Instalación
 
@@ -28,7 +28,7 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
   cd reto2
   
 3. Instala las dependencias necesarias:
-  pip install -r requirements.txt
+  pip install "las librerías necesarias"
 
 ## Uso
 ## Clasificación de imágenes:
