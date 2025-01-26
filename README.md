@@ -33,7 +33,11 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
 ## Uso
 ## Clasificación de imágenes:
 
-1.
+1. En la carpeta modelos_clasificacion_imagenes\simpleCNN_clasificator lanzar dataAugmentation.py
+2. Elegir entre los distintos modelos presentes en modelos_clasificacion_imagenes: resnet18 o model_clasificator (CNN simple)
+3. Ejecutar el modelo seleccionado (resnet18_con_aumento.ipynb, resnet18_sin_aumentar .ipynb o model_clasificator.ipynb)
+4. Para hacer test con nuevos datos generar una copia de la carpeta Imagenes_defectos y repertir paso 1 cambiando el root_dir con la ubicación y nombre de nuestra carpeta creada
+5. Ejecutar el archivo testModelo.ipynb cambiando el "new_data_dir" al directorio de los nuevos datos y cambiando el "path" a el nombre con el que has guarado el modelo en el paso 3, ejemplo path="simple_cnn_model_data_aug.pkl"
 
 ## Clasificación de errores mediante series temporales y Kafka:
 
