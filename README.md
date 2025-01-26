@@ -49,6 +49,15 @@ El objetivo de este proyecto es desarrollar un sistema integral de mantenimiento
 6. Lanzar el simulador (simulador_ejercicio.py) y producer (producer_ejercicio.py)
 7. Lanzar el consumer (consumer_ejercicio.py) para obtener prediccion_series_temporales.json
 
+## Localización del error:
+
+1. En la carpeta segmentacion, asegúrate de que el archivo unet.pkl esté descargado y disponible.
+2. Abre el notebook segmentacion_errores.ipynb.
+3. Configura el notebook según las instrucciones proporcionadas en las celdas iniciales, asegurándote de que el directorio de las imágenes de entrada esté correctamente especificado.
+4. Ejecuta el notebook paso a paso para cargar el modelo entrenado (unet.pkl) y realizar la segmentación en las imágenes proporcionadas.
+5. Los resultados de la segmentación se guardarán en la carpeta especificada dentro del notebook, con las máscaras generadas para los defectos detectados.
+6. Verifica las máscaras generadas para analizar y validar la localización precisa de los defectos en las imágenes.
+
 ## Créditos
 Desarrollado por Joanes De Miguel, Esteban Ruiz y Hodei Azurmendi
 
