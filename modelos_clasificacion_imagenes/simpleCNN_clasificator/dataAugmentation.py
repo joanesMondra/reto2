@@ -29,10 +29,9 @@ def save_augmented_images_and_masks(image, mask, folder, base_name, augment_inde
 
 def augment_nok_images(root_dir, num_augmentations=3):
     """
-    Realiza data augmentation exclusivamente para imágenes `NOK` y guarda las nuevas imágenes y máscaras.
+    Data augmentation para imágenes `NOK` y guardar las nuevas imágenes y máscaras.
     """
     augmentation_transforms = [
-        # transforms.RandomRotation(15),  # Rotación aleatoria de -15 a 15 grados
         transforms.RandomHorizontalFlip(p=1),  # Flip horizontal
         transforms.RandomVerticalFlip(p=1),  # Flip vertical
         transforms.ColorJitter(brightness=0.2, contrast=0.2),  # Cambios en brillo y contraste
@@ -71,57 +70,9 @@ def augment_nok_images(root_dir, num_augmentations=3):
 
     print("Data augmentation para imágenes NOK completado y guardado en las carpetas correspondientes.")
 
-
-# ==================================================
-# Dataset Personalizado
-# ==================================================
-class DefectDataset(Dataset):
-    def __init__(self, root_dir, transform=None, augment_NOK=False):
-        self.root_dir = root_dir
-        self.transform = transform
-        self.augment_NOK = augment_NOK
-        self.data = []
-        self._load_data()
-
-    def _load_data(self):
-        for folder in sorted(os.listdir(self.root_dir)):
-            folder_path = os.path.join(self.root_dir, folder)
-            if not os.path.isdir(folder_path):
-                continue
-
-            images = sorted(glob.glob(os.path.join(folder_path, "Part*.jpg")))
-            masks = sorted(glob.glob(os.path.join(folder_path, "Part*_label.bmp")))
-
-            for img_path, mask_path in zip(images, masks):
-                mask = Image.open(mask_path).convert("L")
-                mask_array = torch.tensor(list(mask.getdata())).reshape(mask.size)
-                label = 1 if mask_array.max() > 0 else 0
-                self.data.append((img_path, label))
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, idx):
-        img_path, label = self.data[idx]
-        image = Image.open(img_path).convert("RGB")
-        if self.transform:
-            image = self.transform(image)
-        return image, label
-
-
-# ==================================================
-# Configuración de Transformaciones y Dataset
-# ==================================================
-transform = transforms.Compose([
-    transforms.Resize((256, 256)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
-])
-
 root_dir = "Imagenes_defectos3"
 
 # Realizar data augmentation para imágenes NOK
-augment_nok_images(root_dir, num_augmentations=5)
+augment_nok_images(root_dir, num_augmentations=6)
 
-# Crear el dataset
-dataset = DefectDataset(root_dir=root_dir, transform=transform)
+
